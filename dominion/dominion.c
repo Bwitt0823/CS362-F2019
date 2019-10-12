@@ -1211,7 +1211,7 @@ int minionRefactor(struct gameState *state, int handPos, int choice1, int choice
 		}
 
 		//other players discard hand and redraw if hand size > 4
-		for (i = 0; i < state->numPlayers; i++)
+		for (int i = 0; i < state->numPlayers; i++)
 		{
 			if (i != currentPlayer)
 			{
@@ -1271,7 +1271,7 @@ int ambassadorRefactor(struct gameState *state, int handPos, int choice1, int ch
 	state->supplyCount[state->hand[currentPlayer][choice1]] += choice2;
 
 	//each other player gains a copy of revealed card
-	for (i = 0; i < state->numPlayers; i++)
+	for (int i = 0; i < state->numPlayers; i++)
 	{
 		if (i != currentPlayer)
 		{
@@ -1343,7 +1343,7 @@ int tributeRefactor(struct gameState *state, int currentPlayer, int nextPlayer, 
 		tributeRevealedCards[1] = -1;
 	}
 
-	for (i = 0; i <= 2; i ++) {
+	for (int i = 0; i <= 2; i ++) {
 		if (tributeRevealedCards[i] == copper || tributeRevealedCards[i] == silver || tributeRevealedCards[i] == gold) { //Treasure cards
 			state->coins += 2;
 		}
