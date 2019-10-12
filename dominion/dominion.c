@@ -897,7 +897,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 		return 0;
 
 	case tribute:
-		tributeRefactor(state, currentPlayer, nextPlayer, *tributeRevealedCards);
+		tributeRefactor(state, currentPlayer, nextPlayer, tributeRevealedCards);
 
 	case ambassador:
 		ambassadorRefactor(state, handPos, choice1, choice2, currentPlayer);
@@ -1299,7 +1299,7 @@ int ambassadorRefactor(struct gameState *state, int handPos, int choice1, int ch
 
 }
 
-int tributeRefactor(struct gameState *state, int currentPlayer, int nextPlayer, int tributeRevealedCards)
+int tributeRefactor(struct gameState *state, int currentPlayer, int nextPlayer, int *tributeRevealedCards)
 {
 	if ((state->discardCount[nextPlayer] + state->deckCount[nextPlayer]) <= 1) {
 		if (state->deckCount[nextPlayer] > 0) {
