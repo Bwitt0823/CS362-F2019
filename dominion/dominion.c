@@ -1130,12 +1130,13 @@ int updateCoins(int player, struct gameState *state, int bonus)
 
 int baronRefactor(struct gameState *state, int choice1, int currentPlayer)
 {
-	state->numBuys++;//Increase buys by 1!
+	state->numBuys--;	//BUG: Reduces numBuys instead of increases
 	if (choice1 > 0) { //Boolean true or going to discard an estate
 		int p = 0;//Iterator for hand!
 		int card_not_discarded = 1;//Flag for discard set!
 		while(card_not_discarded) {
-			if (state->hand[currentPlayer][p] == estate) { //Found an estate card!
+			if (state->hand[currentPlayer][p] == estate) // Sets values instead of comparison
+			{ //Found an estate card!
 				state->coins += 4;//Add 4 coins to the amount of coins
 				state->discard[currentPlayer][state->discardCount[currentPlayer]] = state->hand[currentPlayer][p];
 				state->discardCount[currentPlayer]++;
