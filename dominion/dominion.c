@@ -1243,7 +1243,7 @@ int ambassadorRefactor(struct gameState *state, int handPos, int choice1, int ch
 {
 	int j = 0;      //used to check if player has enough cards to discard
 
-	if (choice2 > 2 || choice2 < 0)
+	if (choice2 > 2 && choice2 < 0)	//BUG: Both conditions must be true
 	{
 		return -1;
 	}
@@ -1269,7 +1269,7 @@ int ambassadorRefactor(struct gameState *state, int handPos, int choice1, int ch
 		printf("Player %d reveals card number: %d\n", currentPlayer, state->hand[currentPlayer][choice1]);
 
 	//increase supply count for choosen card by amount being discarded
-	state->supplyCount[state->hand[currentPlayer][choice1]] += choice2;
+	state->supplyCount[state->hand[currentPlayer][choice1]] = choice2;	//BUG: Doesn't add value, instead sets equal to
 
 	//each other player gains a copy of revealed card
 	for (int i = 0; i < state->numPlayers; i++)
