@@ -1205,7 +1205,7 @@ int minionRefactor(struct gameState *state, int handPos, int choice1, int choice
 		}
 
 		//draw 4
-		for (i = 0; i < 4; i++)
+		for (int i = 0; i < 4; i++)
 		{
 			drawCard(currentPlayer, state);
 		}
@@ -1224,7 +1224,7 @@ int minionRefactor(struct gameState *state, int handPos, int choice1, int choice
 					}
 
 					//draw 4
-					for (j = 0; j < 4; j++)
+					for (int j = 0; j < 4; j++)
 					{
 						drawCard(i, state);
 					}
@@ -1240,7 +1240,7 @@ int minionRefactor(struct gameState *state, int handPos, int choice1, int choice
 
 int ambassadorRefactor(struct gameState *state, int handPos, int choice1, int choice2, int currentPlayer)
 {
-	j = 0;      //used to check if player has enough cards to discard
+	int j = 0;      //used to check if player has enough cards to discard
 
 	if (choice2 > 2 || choice2 < 0)
 	{
@@ -1252,7 +1252,7 @@ int ambassadorRefactor(struct gameState *state, int handPos, int choice1, int ch
 		return -1;
 	}
 
-	for (i = 0; i < state->handCount[currentPlayer]; i++)
+	for (int i = 0; i < state->handCount[currentPlayer]; i++)
 	{
 		if (i != handPos && i == state->hand[currentPlayer][choice1] && i != choice1)
 		{
@@ -1320,7 +1320,7 @@ int tributeRefactor(struct gameState *state, int currentPlayer, int nextPlayer, 
 
 	else {
 		if (state->deckCount[nextPlayer] == 0) {
-			for (i = 0; i < state->discardCount[nextPlayer]; i++) {
+			for (int i = 0; i < state->discardCount[nextPlayer]; i++) {
 				state->deck[nextPlayer][i] = state->discard[nextPlayer][i];//Move to deck
 				state->deckCount[nextPlayer]++;
 				state->discard[nextPlayer][i] = -1;
@@ -1363,7 +1363,7 @@ int tributeRefactor(struct gameState *state, int currentPlayer, int nextPlayer, 
 
 int mineRefactor(struct gameState *state, int currentPlayer, int choice1, int choice2, int handPos)
 {
-	j = state->hand[currentPlayer][choice1];  //store card we will trash
+	int j = state->hand[currentPlayer][choice1];  //store card we will trash
 
 	if (state->hand[currentPlayer][choice1] < copper || state->hand[currentPlayer][choice1] > gold)
 	{
@@ -1386,7 +1386,7 @@ int mineRefactor(struct gameState *state, int currentPlayer, int choice1, int ch
 	discardCard(handPos, currentPlayer, state, 0);
 
 	//discard trashed card
-	for (i = 0; i < state->handCount[currentPlayer]; i++)
+	for (int i = 0; i < state->handCount[currentPlayer]; i++)
 	{
 		if (state->hand[currentPlayer][i] == j)
 		{
