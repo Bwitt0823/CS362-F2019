@@ -806,7 +806,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 		return -1;
 
 	case mine:
-		mineRefactor(state, currentPlayer, choice1, choice2, handPos)
+		mineRefactor(state, currentPlayer, choice1, choice2, handPos);
 
 	case remodel:
 		j = state->hand[currentPlayer][choice1];  //store card we will trash
@@ -857,7 +857,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 		return 0;
 
 	case baron:
-		baronRefactor(state, choice1, currentPlayer)
+		baronRefactor(state, choice1, currentPlayer);
 
 	case great_hall:
 		//+1 Card
@@ -871,7 +871,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 		return 0;
 
 	case minion:
-		minionRefactor(state, handPos, choice1, choice2, currentPlayer)
+		minionRefactor(state, handPos, choice1, choice2, currentPlayer);
 
 	case steward:
 		if (choice1 == 1)
@@ -897,10 +897,10 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 		return 0;
 
 	case tribute:
-		tributeRefactor(state, currentPlayer, nextPlayer, tributeRevealedCards)
+		tributeRefactor(state, currentPlayer, nextPlayer, tributeRevealedCards);
 
 	case ambassador:
-		ambassadorRefactor(state, handPos, choice1, choice2, currentPlayer)
+		ambassadorRefactor(state, handPos, choice1, choice2, currentPlayer);
 
 	case cutpurse:
 
