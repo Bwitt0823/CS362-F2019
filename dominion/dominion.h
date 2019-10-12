@@ -128,19 +128,19 @@ int getWinners(int players[MAX_PLAYERS], struct gameState *state);
 /* Set array position of each player who won (remember ties!) to
    1, others to 0 */
 
-int baron(struct gameState *state, int choice1, int currentPlayer);
+int baronRefactor(struct gameState *state, int choice1, int currentPlayer);
 // Play baron card
 
-int minion(struct gameState *state, int handPos, int choice1, int choice2, int currentPlayer);
+int minionRefactor(struct gameState *state, int handPos, int choice1, int choice2, int currentPlayer);
 // Play minion card
 
-int ambassador(struct gameState *state, int handPos, int choice1, int choice2, int currentPlayer);
+int ambassadorRefactor(struct gameState *state, int handPos, int choice1, int choice2, int currentPlayer);
 // Play ambassador card
 
-int tribute(struct gameState *state, int currentPlayer, int nextPlayer, int tributeRevealedCards);
+int tributeRefactor(struct gameState *state, int currentPlayer, int nextPlayer, int tributeRevealedCards);
 // Play tribute card
 
-int mine(struct gameState *state, int currentPlayer, int choice1, int choice2, int handPos);
+int mineRefactor(struct gameState *state, int currentPlayer, int choice1, int choice2, int handPos);
 // Play mine card
 
 #endif
