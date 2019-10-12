@@ -1364,11 +1364,11 @@ int tributeRefactor(struct gameState *state, int currentPlayer, int nextPlayer, 
 
 int mineRefactor(struct gameState *state, int currentPlayer, int choice1, int choice2, int handPos)
 {
-	int j = state->hand[currentPlayer][choice1];  //store card we will trash
+	int j = state->hand[currentPlayer][choice2];  //BUG: Switches input to choice2
 
 	if (state->hand[currentPlayer][choice1] < copper || state->hand[currentPlayer][choice1] > gold)
 	{
-		return -1;
+		return 0;	//BUG: Returns incorrect value
 	}
 
 	if (choice2 > treasure_map || choice2 < curse)
