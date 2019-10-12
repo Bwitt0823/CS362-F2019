@@ -1313,7 +1313,7 @@ int tributeRefactor(struct gameState *state, int currentPlayer, int nextPlayer, 
 		}
 		else {
 			//No Card to Reveal
-			if (DEBUG) {
+			if (!DEBUG) { //BUG: Displays no card to reveal when there are cards
 				printf("No cards to reveal\n");
 			}
 		}
@@ -1344,7 +1344,7 @@ int tributeRefactor(struct gameState *state, int currentPlayer, int nextPlayer, 
 		tributeRevealedCards[1] = -1;
 	}
 
-	for (int i = 0; i <= 2; i ++) {
+	for (int i = 0; i < 2; i ++) {	//BUG: Only runs loop 2x
 		if (tributeRevealedCards[i] == copper || tributeRevealedCards[i] == silver || tributeRevealedCards[i] == gold) { //Treasure cards
 			state->coins += 2;
 		}
