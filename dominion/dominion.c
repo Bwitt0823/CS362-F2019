@@ -1285,7 +1285,7 @@ int ambassadorRefactor(struct gameState *state, int handPos, int choice1, int ch
 	//trash copies of cards returned to supply
 	for (j = 0; j < choice2; j++)
 	{
-		for (i = 0; i < state->handCount[currentPlayer]; i++)
+		for (int i = 0; i < state->handCount[currentPlayer]; i++)
 		{
 			if (state->hand[currentPlayer][i] == state->hand[currentPlayer][choice1])
 			{
