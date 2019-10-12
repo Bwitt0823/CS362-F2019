@@ -137,7 +137,7 @@ int minionRefactor(struct gameState *state, int handPos, int choice1, int choice
 int ambassadorRefactor(struct gameState *state, int handPos, int choice1, int choice2, int currentPlayer);
 // Play ambassador card
 
-int tributeRefactor(struct gameState *state, int currentPlayer, int nextPlayer, int tributeRevealedCards);
+int tributeRefactor(struct gameState *state, int currentPlayer, int nextPlayer, int *tributeRevealedCards);
 // Play tribute card
 
 int mineRefactor(struct gameState *state, int currentPlayer, int choice1, int choice2, int handPos);

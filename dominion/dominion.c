@@ -897,7 +897,7 @@ int cardEffect(int card, int choice1, int choice2, int choice3, struct gameState
 		return 0;
 
 	case tribute:
-		tributeRefactor(state, currentPlayer, nextPlayer, tributeRevealedCards);
+		tributeRefactor(state, currentPlayer, nextPlayer, *tributeRevealedCards);
 
 	case ambassador:
 		ambassadorRefactor(state, handPos, choice1, choice2, currentPlayer);
