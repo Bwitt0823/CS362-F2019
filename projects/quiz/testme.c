@@ -6,7 +6,7 @@
 char inputChar()
 {
 		// Random Generator of Characters between ASCII A and Z.
-		char rand_char = ((rand() % (90 - 65)) + 65);
+		char rand_char = ((rand() % (125 - 32)) + 32);
 
 		return rand_char;
 }
@@ -20,7 +20,7 @@ char *inputString()
 		int i = 0;
 
 		while (i < 5) {
-			rand_string[i] = ((rand() % (122 - 97)) + 97);
+			rand_string[i] = ((rand() % (116 - 101)) + 101);
 			i++;
 		}
 
