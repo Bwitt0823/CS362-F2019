@@ -28,7 +28,7 @@ int main() {
     struct gameState test;
     int count1 = 0;
     int count2 = 0;
-    int kingdomCards[10] = {adventurer, gardens, embargo, village, minion, mine, cutpurse, sea_hag, tribute, smithy};
+    int kingdomCards[10] = {adventurer, council_room, feast, gardens, mine, remodel, smithy, village, baron, great_hall};
 
     // Initialize Game
     initializeGame(numPlayers, kingdomCards, seed, &state);
@@ -46,6 +46,8 @@ int main() {
     else {
         printf("Fail");
     }
+
+    //
 
     printf("\n---------- Test Complete ----------\n");
 

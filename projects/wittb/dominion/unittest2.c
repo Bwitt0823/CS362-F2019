@@ -28,7 +28,7 @@ int main() {
     struct gameState test;
     int count1 = 0;
     int count2 = 0;
-    int kingdomCards[10] = {adventurer, gardens, embargo, village, minion, mine, cutpurse, sea_hag, tribute, smithy};
+    int kingdomCards[10] = {adventurer, council_room, feast, gardens, mine, remodel, smithy, village, baron, great_hall};
 
     // Initialize Game
     initializeGame(numPlayers, kingdomCards, seed, &state);
@@ -38,6 +38,22 @@ int main() {
     memcpy(&test, &state, sizeof(struct gameState));
     cardEffect(minion, choice1, choice2, choice3, &state, handpos, &bonus);
     player = whoseTurn(&test);
+
+    // Test the number of new cards added
+    if ((state->handCount(whoseTurn(state)) - test->handCount(player)) == 4) {
+        printf("Pass");
+    }
+    else {
+        printf("Fail");
+    }
+
+    // Test the return value
+    if (1 != cardEffect(minion, choice1, choice2, choice3, &state, handpos, &bonus)) {
+        printf("Pass");
+    }
+    else {
+        printf("Fail");
+    }
 
     printf("\n---------- Test Complete ----------\n");
 

@@ -28,7 +28,7 @@ int main() {
     struct gameState test;
     int count1 = 0;
     int count2 = 0;
-    int kingdomCards[10] = {adventurer, gardens, embargo, village, minion, mine, cutpurse, sea_hag, tribute, smithy};
+    int kingdomCards[10] = {adventurer, council_room, feast, gardens, mine, remodel, smithy, village, baron, great_hall};
 
     // Initialize Game
     initializeGame(numPlayers, kingdomCards, seed, &state);
@@ -39,12 +39,20 @@ int main() {
     cardEffect(baron, choice1, choice2, choice3, &state, handpos, &bonus);
     player = whoseTurn(&test);
 
-    // Check for numBuys decrease bug
-    if (test->numBuys > state->numBuys) {
-        printf("Failed: numBuys decreased instead of increased.");
+    // Test correct addition of numBuys
+    if ((test->numBuys) < (state->numBuys)) {
+        printf("Pass");
     }
     else {
-        printf("Pass: numBuys increased.");
+        printf("Fail");
+    }
+
+    // Test if estate card
+    if ((test->hand[player][p] != estate)) {
+        printf("Pass");
+    }
+    else {
+        printf("Fail");
     }
 
 

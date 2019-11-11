@@ -28,7 +28,7 @@ int main() {
     struct gameState test;
     int count1 = 0;
     int count2 = 0;
-    int kingdomCards[10] = {adventurer, gardens, embargo, village, minion, mine, cutpurse, sea_hag, tribute, smithy};
+    int kingdomCards[10] = {adventurer, council_room, feast, gardens, mine, remodel, smithy, village, baron, great_hall};
 
     // Initialize Game
     initializeGame(numPlayers, kingdomCards, seed, &state);
@@ -38,6 +38,22 @@ int main() {
     memcpy(&test, &state, sizeof(struct gameState));
     cardEffect(ambassador, choice1, choice2, choice3, &state, handpos, &bonus);
     player = whoseTurn(&test);
+
+    // Check for BUG 1
+    if ((choice2 > 2 || choice2 < 0) && (cardEffect(ambassador, choice1, choice2, choice3, &state, handpos, &bonus) == -1)) {
+        printf("Pass");
+    }
+    else {
+        printf("Fail");
+    }
+
+    // Check for BUG 2
+    if (state->supplyCount[state->hand[currentPlayer][choice1]] == (test->supplyCount[test->hand[currentPlayer][choice1]] + choice2)) {
+        printf("Pass");
+    }
+    else {
+        printf("Fail");
+    }
 
     printf("\n---------- Test Complete ----------\n");
 
