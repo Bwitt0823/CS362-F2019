@@ -30,7 +30,7 @@ void main() {
     struct gameState test;
     int count1 = 0;
     int count2 = 0;
-    int kingdomCards[10] = {adventurer, gardens, embargo, village, minion, mine, cutpurse, sea_hag, tribute, smithy}
+    int kingdomCards[10] = {adventurer, gardens, embargo, village, minion, mine, cutpurse, sea_hag, tribute, smithy};
 
     // Initialize Game
     intitializeGame(numPlayers, k, seed, &state);
