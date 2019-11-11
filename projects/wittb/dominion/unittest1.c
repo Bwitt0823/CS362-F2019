@@ -11,6 +11,7 @@ Description: Test for baronRefactor()
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
+#include <string.h>
 
 int main() {
 
@@ -27,6 +28,7 @@ int main() {
     int numPlayers = 2;
     int player = 0;
     struct gameState state;
+    struct gameState test;
     int count1 = 0;
     int count2 = 0;
     int kingdomCards[10] = {adventurer, gardens, embargo, village, minion, mine, cutpurse, sea_hag, tribute, smithy};
@@ -36,8 +38,9 @@ int main() {
 
     printf("\n---------- Testing baronRefactor() ----------\n");
 
+    memcpy(&test, &state, sizeof(struct gameState));
     cardEffect(baron, choice1, choice2, choice3, &state, handpos, &bonus);
-    player = whoseTurn(&state);
+    player = whoseTurn(&test);
 
     printf("\n---------- Test Complete ----------\n");
 
