@@ -35,10 +35,11 @@ int main() {
     // Initialize Game
     initializeGame(numPlayers, kingdomCards, seed, &state);
 
-
-
     printf("\n---------- Testing mineRefactor() ----------\n");
 
+    memcpy(&test, &state, sizeof(struct gameState));
+    cardEffect(mine, choice1, choice2, choice3, &state, handpos, &bonus);
+    player = whoseTurn(&test);
 
     printf("\n---------- Test Complete ----------\n");
 
