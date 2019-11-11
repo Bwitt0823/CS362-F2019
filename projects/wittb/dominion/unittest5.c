@@ -37,9 +37,9 @@ void main() {
 
 
 
-    printf("\n---------- Testing mineRefactor() ----------\n")
+    printf("\n---------- Testing mineRefactor() ----------\n");
 
 
-    printf("\n---------- Test Complete ----------\n")
+    printf("\n---------- Test Complete ----------\n");
 
 }

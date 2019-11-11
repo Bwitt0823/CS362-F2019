@@ -37,9 +37,9 @@ void main() {
 
 
 
-    printf("\n---------- Testing ambassadorRefactor() ----------\n")
+    printf("\n---------- Testing ambassadorRefactor() ----------\n");
 
 
-    printf("\n---------- Test Complete ----------\n")
+    printf("\n---------- Test Complete ----------\n");
 
 }
