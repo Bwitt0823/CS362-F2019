@@ -16,9 +16,6 @@ Description: Test for baronRefactor()
 int main() {
 
     // Create variables
-    int i;
-    int j;
-    int k;
     int handpos = 0;
     int choice1 = 0;
     int choice2 = 0;
@@ -41,6 +38,16 @@ int main() {
     memcpy(&test, &state, sizeof(struct gameState));
     cardEffect(baron, choice1, choice2, choice3, &state, handpos, &bonus);
     player = whoseTurn(&test);
+
+    // Check for numBuys decrease bug
+    if (test->numBuys > state->numBuys) {
+        printf("Failed: numBuys decreased instead of increased.");
+    }
+    else {
+        printf("Pass: numBuys increased.");
+    }
+
+
 
     printf("\n---------- Test Complete ----------\n");
 

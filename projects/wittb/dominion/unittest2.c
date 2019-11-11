@@ -16,9 +16,6 @@ Description: Test for minionRefactor()
 int main() {
 
     // Create variables
-    int i;
-    int j;
-    int k;
     int handpos = 0;
     int choice1 = 0;
     int choice2 = 0;

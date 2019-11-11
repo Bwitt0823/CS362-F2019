@@ -16,9 +16,6 @@ Description: Test for mineRefactor()
 int main() {
 
     // Create variables
-    int i;
-    int j;
-    int k;
     int handpos = 0;
     int choice1 = 0;
     int choice2 = 0;
@@ -41,6 +38,14 @@ int main() {
     memcpy(&test, &state, sizeof(struct gameState));
     cardEffect(mine, choice1, choice2, choice3, &state, handpos, &bonus);
     player = whoseTurn(&test);
+
+    // Check if the correct choice is used
+    if(choice1 == j) {
+        printf("Pass");
+    }
+    else {
+        printf("Fail");
+    }
 
     printf("\n---------- Test Complete ----------\n");
 
