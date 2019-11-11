@@ -26,9 +26,6 @@ player: player.c interface.o
 
 all: playdom player
 
-unittests: unittestresults.out
-	./unittests
-
 unittestresults.out: unittest1.c unittest2.c unittest3.c unittest4.c unittest5.c dominion.o
 	echo "unittest1.c:" >> unittestresults.out
 	gcc -o unittest1 dominion.c rngs.c unittest1.c $(CFLAGS)
