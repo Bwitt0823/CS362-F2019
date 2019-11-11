@@ -13,13 +13,13 @@ char inputChar()
 
 char *inputString()
 {
-		// Random Generator of a 10 character string with characters between
+		// Random Generator of a 6 character string with characters between
 		// ASCII a and z.
-		char rand_string[10];
+		char rand_string[6];
 
 		int i = 0;
 
-		while (i < 9) {
+		while (i < 5) {
 			rand_string[i] = ((rand() % (122 - 97)) + 97);
 			i++;
 		}
