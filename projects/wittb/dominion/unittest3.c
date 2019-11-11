@@ -12,7 +12,7 @@ Description: Test for ambassadorRefactor()
 #include <math.h>
 #include <stdlib.h>
 
-void main() {
+int main() {
 
     // Create variables
     int i;
@@ -33,7 +33,7 @@ void main() {
     int kingdomCards[10] = {adventurer, gardens, embargo, village, minion, mine, cutpurse, sea_hag, tribute, smithy};
 
     // Initialize Game
-    intitializeGame(numPlayers, k, seed, &state);
+    intitializeGame(numPlayers, kingdomCards, seed, &state);
 
 
 
@@ -42,4 +42,5 @@ void main() {
 
     printf("\n---------- Test Complete ----------\n");
 
+    return 0;
 }
