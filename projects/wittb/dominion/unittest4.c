@@ -33,7 +33,7 @@ int main() {
     int kingdomCards[10] = {adventurer, gardens, embargo, village, minion, mine, cutpurse, sea_hag, tribute, smithy};
 
     // Initialize Game
-    intitializeGame(numPlayers, kingdomCards, seed, &state);
+    initializeGame(numPlayers, kingdomCards, seed, &state);
 
 
 
