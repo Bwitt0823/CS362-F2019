@@ -36,8 +36,8 @@ int main() {
     int t4 = 0;
     int t5 = 0;
     int tributes = 0;
-    int numVic = 0;
-    int numTreas=0;
+    int victory = 0;
+    int treasure = 0;
     int check;
     int i;
     int tributeRevealedCards[2] = {-1, -1};
