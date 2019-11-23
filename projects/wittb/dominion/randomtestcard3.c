@@ -188,12 +188,12 @@ int main() {
             t3 = 1;
         }
         else {
-            t4=1;
+            t4 = 1;
         }
 
 
         if(t1 == 1 && t2 == 1 && t3 == 1 && t4 == 1) {
-            continueTesting=0;
+            continueTesting = 0;
         }
 
     }
