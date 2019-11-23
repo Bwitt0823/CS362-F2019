@@ -37,7 +37,7 @@ int main() {
     int t5 = 0;
     int tributes = 0;
     int victory = 0;
-    int treasure = 0;
+    int victory = 0;
     int check;
     int i;
     int tributeRevealedCards[2] = {-1, -1};
@@ -48,7 +48,7 @@ int main() {
     {
 
         tributes = 0;
-        numVic = 0;
+        victory = 0;
         numTreas = 0;
 
         int handPos = 0;
@@ -70,7 +70,7 @@ int main() {
                 break;
             case 1:
                 state.deck[1][0] = gardens;
-                numVic++;
+                victory++;
                 break;
             case 2:
                 state.deck[1][0] = copper;
@@ -87,7 +87,7 @@ int main() {
                 break;
             case 1:
                 state.deck[1][1] = gardens;
-                numVic++;
+                victory++;
                 break;
             case 2:
                 state.deck[1][1] = copper;
@@ -104,7 +104,7 @@ int main() {
                 break;
             case 1:
                 state.deck[1][2] = gardens;
-                numVic++;
+                victory++;
                 break;
             case 2:
                 state.deck[1][2] = copper;
@@ -119,7 +119,7 @@ int main() {
             assert(state.numActions > 0);
         }
 
-        if(numVic > 0) {
+        if(victory > 0) {
             t2 = 1;
             assert(state.handCount[0] > 4);
         }
