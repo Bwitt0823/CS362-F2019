@@ -111,7 +111,7 @@ int main() {
                 break;
         }
 
-            check = playTribute(&state, currentPlayer, nextPlayer, &tributeRevealedCards);
+            check = tributeRefactor(&state, currentPlayer, nextPlayer, &tributeRevealedCards);
 
         if(tributes > 0) {
             t1 = 1;
@@ -171,18 +171,18 @@ int main() {
         }
 
         if(state.discardCount[1] == 0 && state.deckCount[1] == 0) {
-            check = playTribute(&state, currentPlayer, nextPlayer, &tributeRevealedCards);
+            check = tributeRefactor(&state, currentPlayer, nextPlayer, &tributeRevealedCards);
             assert(state.discardCount[1] == 0);
             assert(state.deckCount[1] == 0);
             t1 = 1;
         }
         else if(state.discardCount[1] == 0 && state.deckCount[1] == 1) {
-            check = playTribute(&state, currentPlayer, nextPlayer, &tributeRevealedCards);
+            check = tributeRefactor(&state, currentPlayer, nextPlayer, &tributeRevealedCards);
             assert(state.deckCount[1] == 0);
             t2 = 1;
         }
         else if(state.discardCount[1] == 1 && state.deckCount[1] == 0) {
-            check = playTribute(&state, currentPlayer, nextPlayer, &tributeRevealedCards);
+            check = tributeRefactor(&state, currentPlayer, nextPlayer, &tributeRevealedCards);
             assert(state.discardCount[1] == 0);
             t3 = 1;
         }
