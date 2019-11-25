@@ -30,8 +30,9 @@ int p;
 int i;
 int currentPlayer = 0;
 int nextPlayer = 1;
-int continueTesting = 1
+int continueTesting = 1;
 int tmp;
+int tmpTwo;
 int t1 = 0;
 int t2 = 0;
 int t3 = 0;
