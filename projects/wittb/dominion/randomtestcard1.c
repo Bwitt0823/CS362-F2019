@@ -22,12 +22,12 @@ int main() {
 
 	// Create variables
 	srand(time(NULL));
-	int kingdomCards[10] = {adventurer, council_room, feast, gardens, mine, remodel, smithy, village, baron, great_hall};
+	int k[10] = {adventurer, council_room, feast, gardens, mine, remodel, smithy, village, baron, great_hall};
 	struct gameState state;
 	int coppers[MAX_HAND];
 	int silvers[MAX_HAND];
 	int golds[MAX_HAND];
-	int a;
+	int p;
 	int i;
 	int check;
 	int currentPlayer = 0;
@@ -53,7 +53,7 @@ int main() {
 		state.hand[0][3] = baron;
 		memcpy(state.hand[p], coppers, sizeof(int) * state.handCount[0]);
 
-		tmp = rand() % 5
+		tmp = rand() % 5;
 
 		if (tmp != 4) {
 			state.hand[0][tmp] = estate;
@@ -85,11 +85,11 @@ int main() {
 	}
 
 	continueTesting = 1;
-	int t1 = 0;
-	int t2 = 0;
-	int t3 = 0;
-	int t4 = 0;
-	int t5 = 0;
+	t1 = 0;
+	t2 = 0;
+	t3 = 0;
+	t4 = 0;
+	t5 = 0;
 
 	while (continueTesting == 1) {
 		memset(&state, 23, sizeof(struct gameState));
@@ -117,7 +117,7 @@ int main() {
 			if(state.hand[currentPlayer][p] == estate) {
 				assert(state.hand[currentPlayer][p] == estate);
 				assert(state.coins >= 4);
-				assert(state.discar[currentPlayer][0] == baron);
+				assert(state.discard[currentPlayer][0] == baron);
 				p++;
 			}
 			else if (p > state.handCount[currentPlayer]) {
