@@ -13,7 +13,6 @@ Description: Random Test for baronRefactor()
 #include <string.h>
 #include <math.h>
 #include "dominion.h"
-#include "dominion.c"
 #include "interface.h"
 #include "rngs.h"
 #include <time.h>
