@@ -58,7 +58,7 @@ printf("Start Test: minionRefactor()\n");
 		memcpy(state.hand[p], coppers, sizeof(int) * state.handCount[0]);
 
 		if(tmp==1) {
-			playMinion(&state, 0, 0, 0, currentPlayer);
+			minionRefactor(&state, 0, 0, 0, currentPlayer);
 			assert(state.numActions > 0);
 			assert(state.hand[0][0] != minion);
 			assert(state.coins >= 2);
@@ -74,7 +74,7 @@ printf("Start Test: minionRefactor()\n");
 				state.hand[1][i] = minion;
 			}
 
-			playMinion(1, tmp, 0, 0, &state, 0, 0);
+			minionRefactor(1, tmp, 0, 0, &state, 0, 0);
 
 			if(tmpTwo<4) {
 				assert(state.numActions > 0);
