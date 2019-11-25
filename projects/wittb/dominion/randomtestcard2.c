@@ -74,7 +74,7 @@ printf("Start Test: minionRefactor()\n");
 				state.hand[1][i] = minion;
 			}
 
-			minionRefactor(1, tmp, 0, 0, &state, 0, 0);
+			minionRefactor(&state, 0, 0, 0, currentPlayer);
 
 			if(tmpTwo<4) {
 				assert(state.numActions > 0);
