@@ -36,7 +36,7 @@ int main() {
     int t5 = 0;
     int tributes = 0;
     int victory = 0;
-    int victory = 0;
+    int treasures = 0;
     int check;
     int i;
     int tributeRevealedCards[2] = {-1, -1};
@@ -48,7 +48,7 @@ int main() {
 
         tributes = 0;
         victory = 0;
-        numTreas = 0;
+        treasures = 0;
 
         int handPos = 0;
         memset(&state, 23, sizeof(struct gameState));
@@ -73,7 +73,7 @@ int main() {
                 break;
             case 2:
                 state.deck[1][0] = copper;
-                numTreas++;
+                treasures++;
                 break;
         }
 
@@ -90,7 +90,7 @@ int main() {
                 break;
             case 2:
                 state.deck[1][1] = copper;
-                numTreas++;
+                treasures++;
                 break;
         }
 
@@ -107,7 +107,7 @@ int main() {
                 break;
             case 2:
                 state.deck[1][2] = copper;
-                numTreas++;
+                treasures++;
                 break;
         }
 
@@ -123,7 +123,7 @@ int main() {
             assert(state.handCount[0] > 4);
         }
 
-        if(numTreas > 0) {
+        if(treasures > 0) {
             t3 = 1;
             assert(state.coins > 0);
         }
@@ -144,8 +144,8 @@ int main() {
     while(continueTesting == 1) {
 
         tributes = 0;
-        numVi = 0;
-        numTreas = 0;
+        victory = 0;
+        treasures = 0;
 
         int handPos = 0;
 
