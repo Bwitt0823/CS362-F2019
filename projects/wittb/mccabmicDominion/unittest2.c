@@ -40,7 +40,7 @@ int main() {
 	player = whoseTurn(&test);
 
 	// Test the number of new cards added
-	if ((state->handCount(whoseTurn(state)) - test->handCount(player)) == 4) {
+	if ((state->handCount(whoseTurn(&state)) - test->handCount(player)) == 4) {
 		printf("Pass");
 	}
 	else {

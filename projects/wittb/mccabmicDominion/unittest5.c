@@ -22,6 +22,7 @@ int main() {
 	int choice3 = 0;
 	int bonus = 0;
 	int seed = 100;
+	int j = 0;
 	int numPlayers = 2;
 	int player = 0;
 	struct gameState state;

@@ -24,6 +24,7 @@ int main() {
 	int seed = 100;
 	int numPlayers = 2;
 	int player = 0;
+	int p = 0;
 	struct gameState state;
 	struct gameState test;
 	int count1 = 0;

@@ -48,7 +48,7 @@ int main() {
 	}
 
 	// Check for BUG 2
-	if (state->supplyCount[state->hand[currentPlayer][choice1]] == (test->supplyCount[test->hand[currentPlayer][choice1]] + choice2)) {
+	if (state->supplyCount[state->hand[player][choice1]] == (test->supplyCount[test->hand[player][choice1]] + choice2)) {
 		printf("Pass");
 	}
 	else {
