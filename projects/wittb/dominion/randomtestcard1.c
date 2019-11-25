@@ -59,7 +59,7 @@ int main() {
 			state.hand[0][tmp] = estate;
 		}
 
-		baronRefactor(state, 1, 0, currentPlayer);
+		baronRefactor(&state, 1, currentPlayer);
 
 		if (tmp == 0) {
 			assert(state.numBuys > 0);
@@ -107,7 +107,7 @@ int main() {
 			state.hand[0][tmp] = estate;
 		}
 
-		baronRefactor(&state, 1, 0, currentPlayer);
+		baronRefactor(&state, 1, currentPlayer);
 
 		i = 0;
 		p = 1;
