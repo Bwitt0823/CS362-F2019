@@ -101,7 +101,7 @@ int main() {
 		state.hand[0][3] = baron;
 		memcpy(state.hand[p], coppers, sizeof(int) * state.handCount[0]);
 
-		tmp = rand()%5
+		tmp = rand()  %5;
 
 		if (tmp != 4) {
 			state.hand[0][tmp] = estate;
